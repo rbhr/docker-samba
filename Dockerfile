@@ -10,3 +10,4 @@ EXPOSE 445 137 138 139
                                                                                                                                             
 ENTRYPOINT ["/run.sh"]                                                                                                                      
 CMD ["-h"]
+
