@@ -1,7 +1,7 @@
 
 Docker container that creates SMB share(s)
 
-Completely based on dastrasmue/rpi-samba. I needed a non-Arm implementation.
+Completely based on [dastrasmue/rpi-samba](https://github.com/dastrasmue/rpi-samba/). I needed a non-Arm implementation.
 
 ## Command Line Example
 
@@ -43,8 +43,7 @@ services:
     network_mode: bridge                                                                                                                    
     hostname: filer                                                                                                                   
     volumes:                                                                                                                                
-      - "./:/share/home"                                                                                                                    
-      - "/:/share/root"                                                                                                                     
+      - "/media/stick:/share/stick"                                                                                                                                                                                                                                        
     command:  -u "alice:abc123" -u "bob:secret" -s "Backup directory:/share/stick/backups:rw:alice,bob" -s "Alice (private):/share/stick/data/alice:rw:alice" -s "Bob (private):/share/stick/data/bob:rw:bob" -s "Documents (readonly):/share/stick/data/documents:ro:alice,bob" -s "Public (readonly):/share/stick/data/public:ro:"
 ```
 
